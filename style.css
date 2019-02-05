@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps');
+
+/* variables */
+
+:root {
+
+--six-caps: 'Six Caps', sans-serif;
+--meriweather: 'Merriweather', serif;   
+
+--ff-base: --Merriweather; 
+--ff-alt: --Six-caps; 
+
+--fs-base: 1rem; 
+--fs-h1: 3.75rem; 
+--fs-h2: 2.875rem; 
+--fs-h3: 2.25rem; 
+--fs-xl: 6rem; 
+
+--black: #252525; 
+--yellow: #e9d20f; 
+--light-gray: #c2c2c2; 
+--dark-gray: #e8e8e8; 
+--white: #fff; 
+}
+
+/* ===== Styles ===== */
+  
+ 
+body {
+  font-size: var(--fs-base);  
+  font-weight: 300;  
+  color: var(--black);
+  font-family: var(--ff-base);
+
+  display: grid;
+  grid-template: 
+    "header header header header" 10em
+    "hero hero hero hero" 50vh
+    ". main sidebar ." auto
+    "footer footer footer footer" 10em 
+    / 1fr minmax(30em, 5fr) minmax(15em, 2fr) 1fr;
+  grid-column-gap: 1.5em;
+}
+
+header {
+  grid-area: header;
+}
+
+header,
+footer {
+  background: var(--black);
+  color: var(--yellow); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title,
+.footer-title {
+  text-transform: uppercase; 
+  font-family: var(--six-caps); 
+  letter-spacing: 0.3em; 
+  color: var(--yellow); 
+  font-size: var(--fs-h2); 
+}
+
+.hero {
+  grid-area: hero;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/gridarea-hero-bg.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-family: var(--six-caps, san-serif); 
+  font-size: var(--fs-xl); 
+  text-transform: uppercase; 
+  color: var(--black);
+  letter-spacing: 0.3em;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-family: var(--meriweather); 
+  font-size: 2.875rem; 
+  color: var(--white);  
+  font-weight: 300; 
+  margin: 0;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: sidebar;
+  background: var(--dark-gray);
+  padding: 2em;
+}
+
+aside h1 {
+  font-size: 2em; 
+  margin: .67em 0; 
+}
+
+footer {
+  grid-area: footer;
+}
+
+
+/* Cards */
+
+.card {
+  display: grid;
+  grid-template:
+    "img title" min-content
+    "img content" auto / 1fr 3fr;
+  grid-column-gap: 1.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.card-img {
+  grid-area: img;
+  max-width: 100%;
+}
+
+.card-title {
+  grid-area: title;
+  margin: 0;
+  font-weight: 300;
+}
+
+.card-content {
+  grid-area: content;
+}
+
+a {
+  color: var(--yellow); 
+  font-size: 1.1em;
+  }
+
+  
